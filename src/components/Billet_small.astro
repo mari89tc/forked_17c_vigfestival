@@ -1,0 +1,144 @@
+---
+import ScarcityLabelFtilbage from "./Scarcity_label_fåtilbage.astro";
+import ScarcityLabelUdsolgt from "./Scarcity_label_udsolgt.astro";
+
+const {head, price, date, soldOut, fewLeft} = Astro.props;
+---
+<div class="small_card">
+{soldOut && <div><ScarcityLabelUdsolgt></ScarcityLabelUdsolgt></div>}
+{fewLeft && <div><ScarcityLabelFtilbage></ScarcityLabelFtilbage></div>}
+    <div class="roundbutton">
+        <a href="/billetter">
+        <p class="linkbuttontext">køb her</p>
+        </a>
+    </div>
+    <a href="/billetter"> 
+        <div class="udsolgt"><slot/></div>
+        <div class="fotilbage"><slot/></div>
+        <h3>{head}</h3>
+        <h5 class="price">{price}</h5>
+        <div class="date"><h5>{date}</h5></div>
+    </a>   
+</div>
+
+<style>
+    .small_card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 289px;
+    height: 426px;
+    background-color: var(--color-cards-ticket-background-default);
+    border-radius: var(--spacing-corner-radius-medium);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    color: var(--color-cards-ticket-text-main);
+    margin-top: 35%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.price {
+    color: var(--color-cards-ticket-text-main);
+    margin: var(--spacing-margin-small);
+    text-align: center;
+}
+
+.date {
+    display: flex;
+    padding: 150px 20px;
+    align-items: flex-end;
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.date h5 {
+    color: var(--color-cards-ticket-text-date);
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+.small_card:hover {
+    background: var(--color-cards-ticket-background-hover);
+    color: var(--color-green-400);
+}
+
+.small_card:active {
+    background: var(--color-cards-ticket-background-hover);
+    color: var(--color-green-400);
+}
+
+.small_card:hover .date {
+    display: none;
+}
+
+.roundbutton {
+    display: none;
+    position: absolute;
+    left: 30%;
+    top: 35%;
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+}
+
+.small_card:hover .roundbutton {
+    display: flex;
+}
+
+.roundbutton a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    background: var(--color-button-roundbutton-background-hover);
+    color: var(--color-button-roundbutton-text-hover);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roundbutton a:active {
+    background: var(--color-button-roundbutton-background-active);
+}
+
+.linkbuttontext {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+.linkbuttontext p {
+    margin: 0;
+    padding: 0;
+}
+
+.linkbuttontext p:hover, .linkbuttontext p:active {
+    color: var(--color-button-roundbutton-text-hover);
+}
+@media (max-width: 700px) {
+
+.date {
+    padding: 170px 20px;
+}
+
+h5 {
+  font-size: 30px;
+}
+
+h3{
+  font-size: 36px;
+}
+}
+</style>
+
+</style>

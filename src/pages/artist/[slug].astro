@@ -1,0 +1,139 @@
+---
+export async function getStaticPaths() {
+  const url = "https://eaywzeuvibbrhpsjauqe.supabase.co/rest/v1/artists";
+  const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVheXd6ZXV2aWJicmhwc2phdXFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MjY3MzQsImV4cCI6MjAzMTIwMjczNH0.E4226TKZ9T067NHyW7Y-j3Vy9pT9TkkMJdLGv70sWWk";
+  const options = {
+    method: "GET",
+    headers: {
+      apikey: api,
+    },
+  };
+  const data = await fetch(url, options).then((res) => res.json());
+  return data.map((singleArtist) => {
+    return {
+      params: { slug: singleArtist.slug },
+      props: { singleArtist },
+    };
+  });
+};
+const { singleArtist } = Astro.props;
+
+
+import Main from "../../layouts/main.astro"
+import Secondarybutton from "../../components/Secondarybutton.astro";
+---
+<Main title="Kunstner">
+    <div class="header">
+      <img class="desktop" src="/graphics/headgraphic.png" alt="head graphic">
+      <img class="mobile" src="/graphics/mobileheadergraphic.png" alt="head graphic">
+      <h2>{singleArtist.artist}</h2>
+    </div>
+      <section class="indhold">
+        <div class="text">
+          <div class="head_flex">
+            <a href="/lineup"><img class="back" src="/logos/back_button.svg" alt="back button"></a>
+            <h5>{singleArtist.time}</h5>
+          </div>
+            <p class="small">{singleArtist.text}</p>
+            <Secondarybutton href="/program" text="Se programmet"/>
+        </div>
+        <div class="image">
+            <img class="artist_img" src={"/lineup/" + singleArtist.img} alt={singleArtist.artist}>
+            <a href={singleArtist.spotify} target=”_blank”>
+              <img src="/logos/spotify.svg" alt="spotify.svg">
+            </a>
+        </div>
+      </section>
+</Main>
+<style>
+.header{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.desktop, .mobile {
+  width:100%;
+}
+.mobile {
+  display: none;
+}
+h2 {
+  color: var(--color-text-heading2-white, #FFFFF3);
+  margin: 0;
+  position: absolute;
+  text-align: center;
+}
+.indhold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4) var(--spacing-2, 20px);
+  flex-wrap: wrap;
+  margin-left: var(--spacing-margin-small);
+  margin-right: var(--spacing-margin-medium);
+  margin-bottom: var(--spacing-vertical-large);
+}
+.text {
+  display: flex;
+  padding: 0px var(--spacing-4);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-margin-medium);
+  flex: 1 0 0; 
+}
+.head_flex{
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-horisontal-small);
+}
+h5 {
+  color: var(--Color-text-heading3_black, #0A0A0A);
+  margin: 0px;
+  padding: 0px;
+}
+p {
+  color: var(--Color-text-normaltext_black, #0A0A0A);
+  flex: 1 0 0;
+}
+.image {
+  position: relative;
+}
+.artist_img {
+  width: 594.5px;
+  height: 600px;
+  border-radius: 360px;
+  object-fit: cover;
+}
+.image a {
+  position: absolute;
+  top: 75%;
+  right: 4%;
+  width: 106px;
+  height: 106px;
+}
+@media (max-width: 700px) {
+  .mobile {
+    display: block;
+    } 
+    .desktop{
+    display:none;
+  }
+.indhold{
+  margin-left: var(--spacing-margin-medium);
+  margin-right: var(--spacing-margin-medium);
+  margin-bottom: var(--spacing-vertical-medium);
+}
+.text {
+padding: 0px;    
+}
+.artist_img{
+width: 360px;
+height: 360px;
+}
+.image a img {
+  width: 85px;
+  height: 85px;
+}
+}
+</style>

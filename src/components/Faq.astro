@@ -1,0 +1,66 @@
+---
+import Accordion from "./Accordion.astro";
+---
+<div>
+<Accordion head="Hvordan opretter jeg hjælperbørn?">
+    <p class="small">Du kan have dit barn med som hjælperbarn, hvis barnet ikke er fyldt 16 år.
+Barnet skal tilmeldes som hjælperbarn i hjertebanken, og tjekkes ind i Hjælper Home for at kunne få armbånd på.
+<br><br>Log ind i hjertebanken.Tryk på det runde billede-ikon i højre hjørne, hvor dit navn står. Her finder du et ikon som forestiller en mand hvor der står: Min familie, tryk på ikonet.<br><br>Der skal oprettes en profil for hvert barn som du skal have med. Listen med hjælperbørn bliver nulstillet hvert år.</p>
+</Accordion>
+<Accordion head="Min teamchef har oprettet mig?">
+    <p class="small">Hvis du er ny og din teamchef har oprettet dig: <br><br>Du modtager en mail med overskriften Vig Festival Hjertebanken – Velkommen. Hvis du ikke kan finde den i din mailboks, skal du finde den i spam/uønsket mail eller lign. Hvis du slet ikke kan finde den, skal du skrive til hjertebanken@vigfestival.dk fra den mail som du er oprettet på. 
+I mailen er der et kodeord som du skal skrive ned /kopiere. Husk at der er forskel på store og små bogstaver. Nu skal du trykke på linket AKTIVER MIN PROFIL. Så kommer du til E-mail bekræftet- Din konto er nu aktiveret og du kan logge ind.  </p>
+</Accordion>
+<Accordion head="Rettelse af data og kodeord">
+    <p class="small">Rette data og kodeord <br><br>Når du er logget ind i hjertebanken, har du mulighed for at rette nogle af dine data.<br>Tryk på det runde billede-ikon i højre hjørne, hvor dit navn står.<br><br>
+Vælg – Mine indstillinger<br><br>
+Du kan ændre dit kodeord:<br><br>
+I Nuværende Adgangskode skriver du den kode som du vil have ændret, altså den gamle kode.  Til venstre, skiver du din nye adgangskode og gentager den i højre side.  </p>
+</Accordion>
+<Accordion head="Hjælp til Login">
+    <p class="small">Gå på www.vigfestival.dk og vælg linket til hjertebanken eller skriv www.hjertebanken.vigfestival.dk <br><br>Vælg log in pilen i bjælken i venstre side <br><br>Skriv den mailadresse som du er oprettet med i hjertebanken <br><br>Skriv dit kodeord. <br><br>Hvis du har glemt dit kodeord, kan du trykke på Glemt kodeord. Herefter får du en mail hvor du kan nulstille kodeord og oprette et nyt </p>
+</Accordion>
+<Accordion head="Hvordan skifter jeg team?">
+    <p class="small">Hvis du ønsker et andet team og andre opgaver på Vig Festival kan du:<br><br>
+Selv finde et team hvor der er plads og lave en aftale med teamchefen her. Du, eller din nye teamchef skal kontakte hjertebanken@vigfestival.dk og be om at du bliver flyttet. Det er vigtigt at din teamchef fra det team som du ønsker at flytte fra, får besked om at du bliver flyttet.
+Eller du kan skrive til hjertebanken@vigfestival.dk og be om at blive ringet op og få en snak om mulighederne. Hvis det lykkes, er det vigtigt at din teamchef fra det team som du ønsker at flytte fra, får besked om at du bliver flyttet.
+<br><br>Hvis du ønsker at blive slettet:<br><br>Du skal skrive til hjertebanken@vigfestival.dk
+hvis du ønsker at få slettet din profil i Hjertebanken. Husk også at give din teamchef besked.</p>
+</Accordion>
+<Accordion head="Hvordan bestiller jeg hjælpercamp?">
+    <p class="small">Som hjælper på Vig Festival er det gratis at bo på Hjælper Camp Barcelona, men du skal bestille plads.<br><br>
+Det gør du sådan:<br><br>
+Log ind i hjertebanken. Du kan kun bestille camp, hvis du er med på et team.
+<br><br>
+Vælg Webshop i bjælken i venstre side /Menu
+<br><br>
+Du kan enten bestille 1 campingvogn eller 1 telt<br><br>
+Vælg ankomstdag.<br><br>Tryk på Læg i kurv<br><br>
+Tryk på indkøbsvogn og tjek at du har bestilt det rigtige. Der står 0,00 kroner da det jo er gratis.<br><br>
+Tryk accepter betingelserne.<br><br>
+Herefter kan du vælge Mine ordrer i bjælken og se hvad du har bestilt. Du får ikke en bekræftelse eller en billet</p>
+</Accordion>
+
+</div>
+
+<style>
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-margin-small);
+    }
+
+p {
+    background-color: var(--color-green-400);
+    color: var(--color-text-normaltext-white);
+    justify-content: space-between;
+    margin-top: 2px;
+    padding: var(--spacing-margin-small);
+    border-radius: var(--spacing-corner-radius-small);
+}
+@media (max-width: 700px) {
+p {
+    font-size: 14px;
+}
+}
+</style>

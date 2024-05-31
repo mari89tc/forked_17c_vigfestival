@@ -1,0 +1,29 @@
+---
+import Secondarybutton from "./Secondarybutton.astro"
+const {head, href, text} = Astro.props;
+---
+<div class="cta">
+<h4>{head}</h4>
+<Secondarybutton {href} {text}/>
+</div>
+<style>
+.cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-vertical-xsmall);
+    width: 620px;
+}
+h4 {
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .cta {
+        width: 320px;
+        gap: var(--spacing-3);
+    }
+}
+</style>

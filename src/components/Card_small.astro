@@ -1,0 +1,78 @@
+---
+import Secondarybutton from "./Secondarybutton.astro";
+const {head, maintext, href, text, img, alt, target} = Astro.props;
+---
+<section class="content">
+    <div class="text">
+        <h3>{head}</h3>
+        <p class="small">{maintext}</p>
+        <Secondarybutton {href} {target} {text}/>
+    </div>
+    <img class="scale_animation" src={img} alt={alt}>
+</section>
+<style>
+.content {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: var(--spacing-4) var(--spacing-2);
+flex-wrap: wrap;
+margin-left: var(--spacing-margin-small);
+margin-right: var(--spacing-margin-small);
+}
+.text {
+display: flex;
+padding: 0px var(--spacing-4);
+flex-direction: column;
+align-items: flex-start;
+gap: var(--spacing-margin-medium);
+flex: 1 0 0; 
+}
+.text h3 {
+color: var(--color-text-heading3_black);
+margin: 0px;
+padding: 0px;
+}
+.text p {
+color: var(--color-text-normaltext_black);
+flex: 1 0 0;
+}
+img {
+width: 594.5px;
+height: 600px;
+border-radius: 360px;
+object-fit: cover;
+}
+@media (max-width: 700px) {
+img{
+width: 360px;
+height: 360px;
+}
+.text {
+padding: 0px;    
+}
+}
+</style>
+
+<script>
+import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
+
+    gsap.from(".scale_animation", {
+      scrollTrigger: {
+        trigger: ".scale_animation",
+        start: "start 90%",
+        end: "end 10%",
+        scrub: true,
+        //markers: true,
+      },
+      //x: 500,
+      scale: 0.8,
+      duration: 2,
+    });
+
+  });
+</script>

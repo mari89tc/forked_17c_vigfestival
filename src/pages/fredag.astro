@@ -1,0 +1,78 @@
+---
+import Main from "../layouts/main.astro";
+import Header from "../components/Header.astro";
+import Cta from "../components/Cta.astro";
+import ProgramFredag from "../components/Program_fredag.astro";
+---
+<Main title="Program">
+  <Header heading="Program"/>
+  <div class="days">
+    <a href="/onsdag" data-day="onsdag">Onsdag</a>
+    <a href="/program" data-day="torsdag">Torsdag</a>
+    <a class="clicked" href="/fredag" data-day="fredag">Fredag</a>
+    <a href="/lordag" data-day="lordag">Lørdag</a>
+</div>
+  <div id="program-container">
+    <ProgramFredag/>
+  </div>
+  <section class="section2">
+      <Cta head="Vil du se alle kunstnere? Så tjek vores fulde Lineup ud!" href="/lineup" text="Se lineup"/>
+  </section>
+</Main>
+
+<style>
+.days {
+  margin-top: var(--spacing-vertical-xsmall);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-vertical-xsmall);
+}
+.clicked {
+    text-decoration: underline;
+    color: var(--color-naturel-500);
+}
+a {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-button-linkbutton-text-default);
+}
+a:active {
+    text-decoration: underline;
+    color: var(--color-button-linkbutton-text-clicked);
+}
+.section2 {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-vertical-medium);
+  margin-bottom: var(--spacing-vertical-large);
+}
+.program {
+  display: none;
+}
+.program:not(.hidden) {
+  display: block;
+}
+.hidden {
+  display: none; 
+}
+#program-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 700px) {
+    .days {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-vertical-xxsmall);
+    padding-top: var(--spacing-vertical-xxsmall);
+}  
+a {
+    font-size: 14px;
+}
+}
+</style>

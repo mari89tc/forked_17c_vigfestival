@@ -1,0 +1,37 @@
+---
+const {text} =Astro.props;
+---
+<div class="roundbutton">
+    <a href="/">
+    <p class="linkbuttontext">{text}</p>
+    </a>
+</div>
+<style>
+.roundbutton a {
+display: flex;
+width: 120px;
+height: 120px;
+text-decoration: none;
+color: transparent;
+justify-content: center;
+align-items: center;
+flex-shrink: 0; 
+border-radius: 360px;   
+position: absolute;
+left: 110px;
+top: 110px;
+}
+.roundbutton a:hover {
+background: var(--color-button-roundbutton-background-hover);
+color: var(--color-button-roundbutton-text-hover);
+}
+.linkbuttontext p:hover {
+color: var(--color-button-roundbutton-text-hover);
+}
+.roundbutton a:active {
+background: var(--color-button-roundbutton-background-active);
+}
+.linkbuttontext p:active {
+color: var(--color-button-roundbutton-text-hover);
+}
+</style>

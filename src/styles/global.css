@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: var(--color-background-body);
+}
+:root {
+  /* colors */
+  --color-green-50: #f2ffd6;
+  --color-green-100: #d7f19f;
+  --color-green-200: #b6d475;
+  --color-green-300: #526b43;
+  --color-green-400: #174128;
+  --color-green-500: #0d2a19;
+  --color-pink-100: #fcf0fb;
+  --color-pink-200: #ffd9fd;
+  --color-pink-300: #ff9cf9;
+  --color-pink-400: #e761df;
+  --color-naturel-100: #fffff3;
+  --color-naturel-300: #898686;
+  --color-naturel-500: #0a0a0a;
+  /* numbers */
+  --spacing-1: 0.625rem;
+  --spacing-2: 1.25rem;
+  --spacing-3: 1.5625rem;
+  --spacing-4: 2.5rem;
+  --spacing-5: 3.125rem;
+  --spacing-6: 3.75rem;
+  --spacing-7: 6.25rem;
+  --spacing-8: 9.375rem;
+  --spacing-9: 12.5rem;
+  --spacing-10: 21.875rem;
+}
+
+:root {
+  /* colors */
+  --color-background-body: var(--color-naturel-100);
+  --color-background-footer: var(--color-green-400);
+  --color-background-header: var(--color-green-400);
+  --color-background-boks-darkgreen: var(--color-green-400);
+  --color-background-boks-lightgreen: var(--color-green-100);
+  --color-background-boks-pink: var(--color-pink-200);
+  --color-button-linkbutton-text-clicked: var(--color-naturel-500);
+  --color-button-linkbutton-text-default: var(--color-naturel-300);
+  --color-button-primarybutton-background-active-fill: var(--color-pink-300);
+  --color-button-primarybutton-background-active-stroke: var(--color-pink-400);
+  --color-button-primarybutton-background-default: var(--color-pink-300);
+  --color-button-primarybutton-background-hover: var(--color-pink-400);
+  --color-button-primarybutton-text-active: var(--color-naturel-500);
+  --color-button-primarybutton-text-default: var(--color-naturel-500);
+  --color-button-primarybutton-text-hover: var(--color-naturel-500);
+  --color-button-roundbutton-background-active: var(--color-pink-300);
+  --color-button-roundbutton-background-hover: var(--color-pink-200);
+  --color-button-roundbutton-text-active: var(--color-naturel-500);
+  --color-button-roundbutton-text-hover: var(--color-naturel-500);
+  --color-button-secondarybutton-background-active-fill: var(--color-green-400);
+  --color-button-secondarybutton-background-active-stroke: var(--color-naturel-500);
+  --color-button-secondarybutton-background-default: var(--color-green-400);
+  --color-button-secondarybutton-background-hover: var(--color-naturel-500);
+  --color-button-secondarybutton-text-active: var(--color-naturel-100);
+  --color-button-secondarybutton-text-default: var(--color-naturel-100);
+  --color-button-secondarybutton-text-hover: var(--color-naturel-100);
+  --color-button-tertiarybutton-background-active-fill: var(--color-pink-300);
+  --color-button-tertiarybutton-background-active-stroke: var(--color-pink-400);
+  --color-button-tertiarybutton-background-default: var(--color-pink-300);
+  --color-button-tertiarybutton-background-hover: var(--color-pink-400);
+  --color-button-tertiarybutton-text-active: var(--color-naturel-500);
+  --color-button-tertiarybutton-text-default: var(--color-naturel-500);
+  --color-button-tertiarybutton-text-hover: var(--color-naturel-500);
+  --color-cards-info-square-background: var(--color-green-100);
+  --color-cards-info-square-text: var(--color-naturel-500);
+  --color-cards-round-background-active: var(--color-pink-300);
+  --color-cards-round-background-default: var(--color-green-100);
+  --color-cards-round-background-hover: var(--color-pink-200);
+  --color-cards-round-text-default: var(--color-naturel-500);
+  --color-cards-round-text-hover: var(--color-naturel-500);
+  --color-cards-schedule-dark-background-background: var(--color-green-200);
+  --color-cards-schedule-dark-text-main: var(--color-green-400);
+  --color-cards-schedule-dark-text-time: var(--color-green-100);
+  --color-cards-schedule-light-background-background: var(--color-green-100);
+  --color-cards-schedule-light-text-main: var(--color-green-400);
+  --color-cards-schedule-light-text-time: var(--color-green-200);
+  --color-cards-ticket-background-default: var(--color-green-200);
+  --color-cards-ticket-background-hover: var(--color-green-400);
+  --color-cards-ticket-text-date: var(--color-green-100);
+  --color-cards-ticket-text-main: var(--color-green-400);
+  --color-text-heading-4-black: var(--color-naturel-500);
+  --color-text-heading2-black: var(--color-naturel-500);
+  --color-text-heading2-white: var(--color-naturel-100);
+  --color-text-heading3-black: var(--color-naturel-500);
+  --color-text-heading3-white: var(--color-naturel-100);
+  --color-text-heading4-white: var(--color-naturel-100);
+  --color-text-normaltext-black: var(--color-naturel-500);
+  --color-text-normaltext-white: var(--color-naturel-100);
+  /* numbers */
+  --spacing-corner-radius-small: var(--spacing-1);
+  --spacing-corner-radius-medium: var(--spacing-2);
+  --spacing-horisontal-xsmall: var(--spacing-1);
+  --spacing-horisontal-small: var(--spacing-2);
+  --spacing-horisontal-medium: var(--spacing-3);
+  --spacing-margin-small: var(--spacing-2);
+  --spacing-margin-medium: var(--spacing-4);
+  --spacing-vertical-xxsmall: var(--spacing-2);
+  --spacing-vertical-xsmall: var(--spacing-6);
+  --spacing-vertical-small: var(--spacing-7);
+  --spacing-vertical-medium: var(--spacing-8);
+  --spacing-vertical-large: var(--spacing-9);
+  --spacing-vertical-xlarge: var(--spacing-10);
+}
+
+/* Fonte */
+
+/* 
+Proxima Nova Ekstrabold:
+font-family: "proxima-nova", sans-serif;
+font-weight: 800;
+font-style: normal;
+*/
+
+/* 
+Proxima Nova Bold:
+font-family: "proxima-nova", sans-serif;
+font-weight: 700;
+font-style: normal; 
+*/
+
+/* 
+Open Sans Regular:
+font-family: "open-sans", sans-serif;
+font-weight: 400;
+font-style: normal; 
+*/
+
+/* 
+Open Sans Bold:
+font-family: "open-sans", sans-serif;
+font-weight: 700;
+font-style: normal; 
+*/
+
+h1 {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 185px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 5.55px;
+  text-transform: uppercase;
+  -webkit-text-stroke-color: var(--color-green-100);
+  -webkit-text-stroke-width: 3px;
+  color: transparent;
+}
+h2 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 80px;
+  text-transform: uppercase;
+}
+h3 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 50px;
+  line-height: 60px;
+  margin: 0;
+}
+h4 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 38px;
+  line-height: 40px;
+}
+h5 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 30px;
+}
+h6 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: normal;
+}
+p {
+  margin: 0px;
+}
+.linkbuttontext {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.large {
+  font-family: "open-sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+}
+.medium {
+  font-family: "open-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+.small {
+  font-family: "open-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 26px;
+}
+.xsmall {
+  font-family: "open-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 14px;
+}
+/* Mobile */
+/* Fonte til mobil */
+@media (max-width: 700px) {
+  h1 {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 52px;
+  }
+  h2 {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 50px;
+    line-height: 60px;
+  }
+  h3 {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    font-size: 32px;
+    line-height: 40px;
+  }
+  h4 {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 24px;
+  }
+  h5 {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+  }
+  .large {
+    font-family: "open-sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+  }
+}

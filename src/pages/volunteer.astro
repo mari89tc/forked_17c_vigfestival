@@ -1,0 +1,148 @@
+---
+import Main from "../layouts/main.astro"
+import Heartlist from "../components/Heartlist.astro"
+import CardSmall from "../components/Card_small.astro"
+import Cta from "../components/Cta.astro"
+import CardList from "../components/CardList.astro"
+import Faq from "../components/Faq.astro"
+import Primarybutton from "../components/Primarybutton.astro"
+import Logind from "../components/Logind.astro"
+---
+<Main title="Frivillig">
+<div class="head">
+    <div class="background">
+        <img class="desktop" src="/graphics/frivilliggraphic.png" alt="grafik heading" width="1281px" height="626px">
+        <img class="mobile" src="/graphics/mobilefrivillig.svg" alt="grafik heading" width="390px" height="501px">
+    </div>
+    <div class="head_text">
+        <h2>Frivillig</h2>
+        <p class="large">Vil du være en del af fællesskabet, så bliv en del af frivilligteamet på Vig Festival</p>
+        <Primarybutton href="https://hjertebanken.vigfestival.dk/users/signup/" text="Bliv frivillig" target=”_blank”/>
+    </div>
+</div>
+<div class="logind">
+    <Logind/>
+</div>
+<section class="section1">
+    <CardSmall head="En følelse af fællesskab" maintext="Når du bruger din fritid på at arbejde for festivalen og de lokale foreninger, er du en del af et stort fællesskab, hvor der løftes i flok. Sammen med de andre hjælpere får du et unikt sammenhold, der skabes gennem arbejdet, socialt samvær, hygge og samarbejde.Når du bruger din fritid på at arbejde for festivalen og de lokale foreninger, er du en del af et stort fællesskab, hvor der løftes i flok. Sammen med de andre hjælpere får du et unikt sammenhold, der skabes gennem arbejdet, socialt samvær, hygge og samarbejde." img="/image/volunteer/frivillig_section1.webp" alt="to frivillige piger" href="https://hjertebanken.vigfestival.dk/users/signup/" text="Bliv frivillig" target=”_blank”/>
+</section>
+<section class="section2">
+    <div class="testimonial">
+        <div class="annimation"><p class="large">Jeg har haft en super oplevelse som frivillig på Vig Festival,<br> det har givet mig en unik mulighed for at <br> være en del af noget større.</p></div>
+         <div class="annimation"><p class="medium">-Sofie, 23 år, frivillig</p></div>
+    </div>
+    <CardList head="Fordele som frivillig" img="/image/volunteer/frivllig_section3.webp" alt="2 damer fester" href="https://hjertebanken.vigfestival.dk/users/signup/" text="Bliv frivillig" target=”_blank”>
+            <Heartlist input="Del af årets medhjælperfest"/>
+            <Heartlist input="Partoutbillet til alle dage"/>
+            <Heartlist input="Gratis mad og drikke!"/>
+            <Heartlist input="Du bliver en del af et større fællesskab"/>
+    </CardList>
+</section>
+<section class="section3">
+    <h3>Godt at vide</h3>
+    <Faq/>
+</section>
+<section class="section4">
+    <Cta head="Fik du ikke svar på dit spørgsmål, så kontakt os her" href="" text="Kontakt os"/>
+</section>
+</Main>
+<style>
+   
+.head {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+.background {
+    width: 100%;
+    height: auto;
+}
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.head_text {
+    color: var(--color-text-heading2-white, #FFFFF3);
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    }
+.head_text h2, .large {
+    gap: var(--spacing-margin-medium);
+    margin: 0px;
+}
+.head_text .large {
+    margin-bottom: var(--spacing-vertical-small);
+}
+.mobile {
+    display: none;
+} 
+.logind {
+    position: fixed;
+    top: 70%;
+    right: 10px;
+    z-index: 1000;
+    padding: var(--spacing-margin-small);
+}   
+.section1, .section2, .section3, .section4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-vertical-medium);
+}
+.section2 {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    position: relative;
+    background-image: url(/graphics/volunteer_section2.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 170vh;
+    gap:var(--spacing-vertical-small);
+}
+.testimonial {
+    text-align: center;
+    color: var( --color-green-400);
+    text-wrap: balance;
+    background-image: url(/image/volunteer/quote.svg);
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+.section3 {
+    flex-direction: column;
+    gap: var(--spacing-vertical-xsmall);
+}
+@media (max-width: 768px) {
+    .desktop {
+        display: none;
+    }
+    .testimonial .medium {
+        font-size: 18px;
+        padding-top: 5px;
+    }
+    .mobile {
+        display: block;
+    }
+    .head {
+        margin-bottom: var(--spacing-vertical-xsmall);
+    }
+    .head_text{
+        padding-left: var(--spacing-horisontal-xsmall);
+        padding-right: var(--spacing-horisontal-xsmall);
+        width:80%;
+    }
+    .section1, .section2, .section3, .section4{
+    margin-bottom: var(--spacing-vertical-small);
+}
+    .section2 {
+        background-image: url(/graphics/mobile_section2.svg);
+        height: 160vh;
+    }
+}
+</style>

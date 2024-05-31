@@ -1,0 +1,37 @@
+---
+const {heading} = Astro.props;
+---
+<div>
+    <img class="desktop" src="/graphics/headgraphic.png" alt="head graphic" width="1281px" height="437px">
+    <img class="mobile" src="/graphics/mobileheadergraphic.png" alt="head graphic" width="390px" height="376px">
+    <h2>{heading}</h2>
+</div>
+
+<style>
+    div{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    img {
+        width:100%;
+    }
+    .mobile {
+        display: none;
+    }
+    h2 {
+        color: var(--color-text-heading2-white);
+        margin: 0;
+        position: absolute;
+        text-align: center;
+    }
+    @media (max-width: 700px) {
+    .mobile {
+    display: block;
+    } 
+    .desktop{
+    display:none;
+    }
+    }
+</style>

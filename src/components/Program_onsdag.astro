@@ -1,0 +1,101 @@
+---
+import SkemaCardOneHour from "../components/SkemaCardOnehour.astro"
+import SkemaCardLong from "../components/SkemaCardLong.astro"
+---
+<div class="slideshow-container">
+    <div class="prev_next">
+            <img class="prev" onclick="plusSlides(-1)" src="/logos/back_button.svg" alt="back button" width="85px" height="85px">
+            <img class="next next_but" onclick="plusSlides(1)" src="/logos/back_button.svg" alt="back button" width="85px" height="85px">
+    </div>  
+    <div class="mySlides fade">
+        <div class="page">
+            <div class="content">
+                <h4>Stor Scene</h4>
+            </div>
+            <div class="content">
+                <h4>Hønsehuset</h4>
+            </div>
+            <div class="content">
+                <h4>Heartbeat</h4>
+                <p class="xsmall">*Gratis adgang for alle om onsdagen</p>
+                <div class="heartbeat">
+                    <SkemaCardOneHour head="Uro" time="20:00"/>
+                    <SkemaCardOneHour head="BirdyTwice" time="21:30"/>
+                    <SkemaCardOneHour head="Lyst" time="22:30"/>
+                    <SkemaCardOneHour head="Barcode Brothers" time="23:30"/>
+                    <SkemaCardLong head="DJ 4Gaard" time="00:30"/>
+                </div>   
+            </div> 
+        </div>
+    </div>
+</div>
+<script src="/src/scripts/slider.js"></script>
+
+<style>
+.slideshow-container {
+  max-width: 1400px;
+  position: relative;
+  margin: auto;
+}
+.mySlides {
+  display: none;
+}
+.mySlides:first-child {
+  display: block;
+}
+.prev_next {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.prev, .next {
+  cursor: pointer;
+  width: auto;
+  padding: 16px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+.next_but {
+  transform: rotate(180deg);
+}
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spacing-vertical-xsmall);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+h4 {
+  color: var(--color-text-heading-4-black);
+  text-align: center;
+  margin: 0;
+  margin-bottom: var(--spacing-vertical-xsmall);
+}
+ .heartbeat{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--color-green-50);
+  padding: var(--spacing-margin-small);
+  border-radius: var(--spacing-corner-radius-medium);
+}
+@media (max-width: 700px) {
+  .page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-vertical-xsmall);
+} 
+.prev, .next {
+  padding: 10px;
+}
+.prev img, .next img {
+  width: 75%;
+}
+h4 {
+  margin-bottom: var(--spacing-vertical-xxsmall);
+}
+}
+</style>

@@ -1,0 +1,60 @@
+---
+const data = await fetch(
+"https://eaywzeuvibbrhpsjauqe.supabase.co/rest/v1/artists", {
+    method:"GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVheXd6ZXV2aWJicmhwc2phdXFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU2MjY3MzQsImV4cCI6MjAzMTIwMjczNH0.E4226TKZ9T067NHyW7Y-j3Vy9pT9TkkMJdLGv70sWWk"
+    },
+}
+).then((res)=>res.json());
+
+import Header from "../components/Header.astro"
+import Main from "../layouts/main.astro"
+import Kunstner from "../components/Kunstner.astro"
+import Cta from "../components/Cta.astro";
+import Loader from "../components/Loader.astro";
+---
+
+<Main title="Lineup">
+    <Loader/>
+<Header heading="Lineup"/>
+<section>
+    <div class="lineup">
+    {data.map(artist => {
+        return <Kunstner data={artist}/>
+    })}
+    </div>
+    <div>
+        <Cta head="Vil du se hvornår dine yndlingsartister optræder?" href="/program" text="Se programmet"/>
+    </div>
+</section>
+</Main>
+<style>
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-vertical-medium);
+}
+.lineup {
+    display: flex;
+    flex-wrap: wrap;
+    place-items: center;
+    justify-content: center;
+    margin-top: var(--spacing-vertical-xsmall);
+    margin-bottom: var(--spacing-vertical-medium);
+    gap: var(--spacing-margin-small);
+}
+@media (max-width: 1000px) {
+    .section {
+    gap: var(--spacing-margin-small);
+    }
+    .lineup {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-margin-small);
+    }
+}
+</style>

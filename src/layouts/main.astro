@@ -1,0 +1,35 @@
+---
+const { type = "" } = Astro.props;
+const { title } = Astro.props;
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.css";
+---
+
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preload" href="https://use.typekit.net/irl7dok.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://use.typekit.net/irl7dok.css"></noscript>
+    <title>{title}</title>
+    <meta name="robots" content="noindex" />
+  </head>
+  <body class={title} class={type}>
+    <div class="wrapper">
+      <Navigation/>
+      <slot />
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style>
+  .wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    position: relative;
+  }
+</style>

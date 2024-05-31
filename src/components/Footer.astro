@@ -1,0 +1,132 @@
+---
+---
+<section class="footer">
+    <div class="flex_indhold">
+    <div class="flex_text">
+        <div class="boks_1">
+            <h6>Kontakt</h6>
+            <a href="">Holbækvej 16B 4560 Vig Sjælland</a>
+            <a href="tel:59316468">59 31 64 68</a>
+            <a href="mailto:Info@vigfestival.dk">Info@vigfestival.dk</a>
+        </div>
+        <div class="boks_2">
+            <h6>Erhverv</h6>
+            <a href="">Sportslegat</a>
+            <a href="">Uddeling af overskud</a>
+            <a href="">Sponsorer</a>
+            <a href="">Privatlivspolitik</a>
+            <a href="">Eksterne boder</a>
+            <a href="">Den Rytmiske Højskole</a>
+        </div>
+        <div class="boks_3">
+            <h6>Indhold</h6>
+            <a href="">Nyheder</a>
+            <a href="/info">Info</a>
+            <a href="">Kort over Pladsen</a>
+            <a href="">Om festivalen</a>
+            <a href="https://hjertebanken.vigfestival.dk/users/login/" target="_blank">Frivillig login</a>
+            <a href="">Ledige stillinger</a>
+        </div>
+    </div>
+   <div class="boks_4">
+    <a href="/forside"> <img class="vf_img" src="/logos/vig_festival_logo.svg" alt="Vig festival logo" width="66px" height="66px"/></a>
+    <h6>Følg med på vores sociale medier</h6>
+    <div class="some">
+        <a href="https://www.instagram.com/vigfestival_official/" target="_blank"> <img class="some_img" src="/logos/instagram_default.svg" alt="Instagram logo" width="40px" height="41px"/></a>
+        <a href="https://www.facebook.com/Vigfestival/" target="_blank"> <img class="some_img" src="/logos/facebook_default.svg" alt="Facebook logo" width="40px" height="41px"/></a>
+        <a href="https://www.tiktok.com/@vigfestival" target="_blank"> <img class="some_img" src="/logos/tiktok_default.svg" alt="TikTok logo" width="41px" height="40px"/></a>       
+    </div>
+</div>
+
+    </div>
+</section>
+
+<style>
+.flex_indhold{
+background: var(--color-background-footer);
+display: flex;
+padding: 100px 100px 100px 40px;
+justify-content: space-between;
+flex-wrap: wrap;}
+
+.flex_text {
+    display: flex;
+    flex-wrap: wrap;
+   gap: var(--spacing-vertical-xsmall);
+}
+
+.boks_1, .boks_2, .boks_3{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-shrink: 0;
+    gap: var(--spacing-1);
+  }
+
+  .boks_4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-1);
+  }
+  .some_img {
+    width: 25%;
+    gap: var(--spacing-margin-medium);
+  }
+
+
+ .vf_img{
+    width: 100%;
+ }
+
+a {
+color: var(--color-naturel-100);
+text-decoration: none;
+font-family: "open-sans", "sans-serif";
+font-weight: 400;
+font-size: 12px;
+font-style: normal;}
+
+.boks_1 a:hover, .boks_2 a:hover, .boks_3 a:hover {
+color: var(--color-green-100) ;
+padding-inline-start: 10px;
+}
+
+  h6 {
+    color: var(--color-naturel-100);
+    margin: 0;
+    line-height: 20px;
+    max-width: 200px;
+    text-align:center}
+
+
+    @media (max-width: 600px) {
+
+      .flex_indhold {
+      justify-content: center;
+      align-items: center;
+      }
+
+
+.flex_text {
+   gap: var(--spacing-4);
+}
+  
+
+      .boks_4 {
+        order: -1;
+        margin-bottom: var(--spacing-vertical-xsmall);
+      }
+
+           .boks_2 {
+        order: -1;
+      }
+      .boks_3 {
+        order: -1;
+      }
+  }
+
+</style>

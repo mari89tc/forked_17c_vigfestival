@@ -1,0 +1,192 @@
+---
+import CardLarge from "../components/Card_large.astro"
+import CardSmall from "../components/Card_small.astro"
+import Header from "../components/Header.astro"
+import InfoSquare from "../components/Info_square.astro";
+import Cta from "../components/Cta.astro";
+import Main from "../layouts/main.astro"
+import CardSmallReverse from "../components/Card_small_reverse.astro";
+---
+<Main title="Børn på festivalen">
+<Header heading="Børn på festivalen"/>
+<section class="section1">
+    <CardSmallReverse img="/image/kids/kids_section1.webp" alt="Børn på græs" head="Børneland for familien" maintext="Kom forbi Viggos Verden, et børneland hvor der er plads til alle, store som små. Viggos Verden er et sted hvor børnene er i fokus, hvor musik og events skaber rammerne for en god festival for børnene. Viggos Verden tilbyder mange forskellige tilbud til børn og unge, så det er aldrig kedeligt at tilbringe tid her. Oasen byder på Viggos store scene, Viggos lille scene, kreatelt, Tømmerland, hoppeborge, spil og meget mere. Mulighederne er uendelige og selv voksne vil have lyst til at bruge tiden her." href="/program" text="Se programmet"/>
+</section>
+<section class="section2">
+    <CardSmall img="/image/kids/kids_section2.webp" alt="Familie på festival" head="Festival med familien" maintext="Vidste du at du kan tage dit barn under 11 år gratis med på festivalen. Lad dem opleve og være en del af Viggos Verden. Børn over 12 år kan deltage i festivalen ved køb af en familiebillet. Familiebilletten inkluderer partout for 1 voksen og 1 ung fra 12 år til og med 15 år." href="/billetter" text="Køb familiebillet"/>
+</section>
+<section class="section3">
+    <h3>Oplev stemningen i Viggos Verden</h3>
+    <div>
+        <video id="desktopVideo" class="desktop" width="100%" height="100%"  muted loop>
+            <source src="/image/kids/kids_video.mp4" type="video/mp4" />
+        </video>
+        <video id="mobileVideo" class="mobile" width="100%" height="100%"  muted loop>
+            <source src="/image/kids/kids_mobile.mp4" type="video/mp4" />
+        </video>
+        <button id="playPauseButton" aria-label="play-button" class="play-button"></button>
+    </div>
+</section>
+<section class="section4">
+    <InfoSquare head="Frivillig som barn" text="Vidste du, at du kan tage dit barn med som hjælper, hvis barnet ikke er fyldt 16 år! På den måde kan i tilbringe tid sammen på festivalen og bidrage til et større fællesskab!"/>
+    <InfoSquare head="Trygt sted for alle" text="Vig Festival er en familiefestival, og derfor er der mange børn og unge med til festen. Lad os alle bidrage til, at også børnene får en tryg og hyggelig fest. Under festivalen er der altid arbejdsomme hjælpere klar til at tage imod børn i alle aldre, så det er altid et sikkert og trygt sted."/>
+    <InfoSquare head="Plads til voksne" text="Bliver forældrene trætte og har brug for et afbræk fra resten af festivalen, så er der mulighed for det i Viggos Verden. Her kan man sætte sig ind i Viggos madskål, hvor der er salg af kaffe og kage, samt lidt mad. En perfekt mulighed for at komme ned i gear og gøre sig klar til næste kunstner på programmet."/>
+</section>
+<section class="section5">
+    <Cta head="Fik du ikke svar på dit spørgsmål, så kontakt os her" href="" text="Kontakt os"/>
+</section>
+</Main>
+<style>
+.section1, .section2, .section3, .section5 {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-bottom: var( --spacing-vertical-medium);
+}
+.section2 {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-image: url(/graphics/pinkgraphic1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section3 {
+gap: var(--spacing-margin-medium);  
+}
+.section4 {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: var(--spacing-margin-medium);
+margin-bottom: var( --spacing-vertical-medium);
+margin: 0;
+padding: 0;
+position: relative;
+background-image: url(/graphics/greengraphic1.png);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 130vh;  
+}
+video {
+display: flex;
+width: 60%;
+height: auto;
+border-radius: var(--spacing-corner-radius-medium);
+}
+
+.desktop {
+    position: relative;
+    left: 20%;
+}
+button {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    border: none;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    line-height: normal;
+    text-transform: uppercase;
+    border-radius: 360px;
+    background-color: var(--color-green-100);
+    color: var(--color-cards-round-text-default);
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    background-color: var(--color-pink-200);
+}
+
+button:hover {
+    opacity: 1;
+}
+
+.play-button::after {
+    content: 'afspil';
+}
+
+.pause-button::after {
+    content: 'pause';
+}
+
+.mobile {
+display: none;
+}
+
+@media (max-width: 1000px) {
+.desktop {
+    display: none;
+}
+.mobile {
+    display:block;
+    position: relative;
+    left: 10%;
+    width: 80%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+}
+button {
+    left: 50%;
+    top: 52%;
+    width: 120px;
+    height: 120px;
+}
+.section1, .section2, .section3, .section4, .section5 {
+margin-bottom: var( --spacing-vertical-small);
+}
+.section2 {
+    background-image: url(/graphics/mobilepinkgraphic1.svg);
+    height: 120vh; 
+}
+.section4 {
+    background-image: url(/graphics/mobilegreengraphic1.svg);
+    height: 130vh;
+}
+}
+</style>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const desktopVideo = document.getElementById("desktopVideo");
+    const mobileVideo = document.getElementById("mobileVideo");
+    const playPauseButton = document.getElementById("playPauseButton");
+
+    function togglePlayPause(video) {
+        if (video.paused) {
+            video.play();
+            playPauseButton.classList.remove("play-button");
+            playPauseButton.classList.add("pause-button");
+        } else {
+            video.pause();
+            playPauseButton.classList.remove("pause-button");
+            playPauseButton.classList.add("play-button");
+        }
+    }
+
+    playPauseButton.addEventListener("click", function() {
+        if (window.innerWidth > 1000) {
+            togglePlayPause(desktopVideo);
+        } else {
+            togglePlayPause(mobileVideo);
+        }
+    });
+});
+
+</script>

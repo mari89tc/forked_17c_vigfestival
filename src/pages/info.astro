@@ -1,0 +1,70 @@
+---
+import Header from "../components/Header.astro"
+import Main from "../layouts/main.astro"
+import InfoLarge from "../components/Info_large.astro"
+import Cta from "../components/Cta.astro"
+---
+<Main title="Info">
+<Header heading="Info"/>
+<section class="section_1">
+    <div>
+    <InfoLarge head="Børn på festivalen" href="/kidsonthefestival"/>
+    <InfoLarge head="Kontakt" href="/kidsonthefestival"/>
+    <InfoLarge head="Regler og sikkerhed" href="/kidsonthefestival"/>
+    <InfoLarge head="Kort over pladsen" href="/kidsonthefestival"/>
+</div>
+<div>
+    <InfoLarge head="Mad og drikke" href="/kidsonthefestival"/>
+    <InfoLarge head="Handicap faciliteter" href="/kidsonthefestival"/>
+    <InfoLarge head="Åbningstider og parkering" href="/kidsonthefestival"/>
+</div>
+<div>
+    <InfoLarge head="Armbånds påsætning" href="/kidsonthefestival"/>
+    <InfoLarge head="Betaling og sikkerhed" href="/kidsonthefestival"/>
+    <InfoLarge head="Festivalbus, tog og taxa" href="/kidsonthefestival"/>
+    <InfoLarge head="Garderobe mm." href="/kidsonthefestival"/>
+</div>
+</section>
+<section class="section_2">
+    <Cta head="Fik du ikke svar på dit spørgsmål, så kontakt os her" href="" text="Kontakt os"/>
+</section>
+</Main>
+<style>
+.section_1{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    place-items: center;
+    justify-content: center;
+    margin-top: var(--spacing-vertical-xsmall);
+    margin-bottom: var(--spacing-vertical-medium);
+}
+
+.section_2 {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-vertical-medium);
+}
+div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-margin-small);
+}
+@media (max-width: 1000px) {
+.section_1 {
+    gap: var(--spacing-margin-small);
+}
+div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-margin-small);
+}
+.section_2 {
+    margin-bottom: var(--spacing-vertical-small);
+}
+}
+</style>

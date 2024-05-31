@@ -1,0 +1,152 @@
+---
+import NavButton from "./Nav_button.astro"
+import Tertiarybutton from "./Tertiarybutton.astro"
+---
+<header>
+  <div class="navigation">
+    <a href="/"><img src="/logos/vig_festival_logo.svg" width="66px" height="66px" alt="logo"></a>
+    <div class="menu-buttons">
+      <Tertiarybutton/>
+      <button id="burger_menu">
+        menu 
+        <span></span>
+      </button>
+    </div>
+  </div>
+    <nav id="menu">
+        <ul>
+          <li><a href="/program"><NavButton nav="program"/></a></li>
+          <li><a href="/billetter"><NavButton nav="billet"/></a></li>
+          <li><a href="/lineup"><NavButton nav="lineup"/></a></li>
+          <li><a href="/info"><NavButton nav="info"/></a></li>
+          <li><a href="/volunteer"><NavButton nav="frivillig"/></a></li>
+          <li><a href="/"><NavButton nav="om os"/></a></li>
+        </ul>
+      </nav>
+</header>
+<script src="/src/scripts/burgermenu.js"></script>
+
+<style>
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+ul {
+  padding-inline-start: 0;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  padding: var(--spacing-margin-small);
+}
+.navigation img {
+  width: 100%;
+}
+.menu-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-horisontal-small);
+}
+#burger_menu {
+  text-indent: -9999px;
+  border: none;
+  background: transparent;
+  margin: 25px;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#burger_menu span:before,
+#burger_menu span:after {
+  background: var(--color-pink-300);
+  display: block;
+  height: 4px;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  content: "";
+  border-radius: 2px;
+  width: 55px;
+}
+#burger_menu span {
+  background: var(--color-pink-300);
+  display: block;
+  height: 4px;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  content: "";
+  border-radius: 2px;
+  width: 40px;
+}
+
+#burger_menu span:before {
+  top: -12px;
+}
+
+#burger_menu span:after {
+  top: 12px;
+}
+
+/* Hover effect */
+#burger_menu.hover span:before,
+#burger_menu.hover span:after, #burger_menu.hover span {
+  width: 55px;
+}
+
+/* Close effect */
+#burger_menu.close span:before {
+  top: 0px;
+  transform: rotate(65deg);
+  width: 55px;
+}
+#burger_menu.close span {
+  transform: rotate(-32deg);
+  width: 55px;
+}
+#burger_menu.close span:after {
+  top: 0px;
+  transform: rotate(65deg);
+  opacity: 0;
+  width: 55px;
+}
+
+/* Menu overlay effect */
+#menu {
+  z-index: 4;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+}
+#menu.overlay {
+  visibility: visible;
+  opacity: 1;
+  padding-top: 80px;
+  background-color: var(--color-background-body);
+  background-image: url(/graphics/headgraphic.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media (max-width: 700px) {
+  .navigation {
+  padding: 0px;
+  margin: 0px;
+}
+}
+</style>

@@ -1,0 +1,73 @@
+---
+import Header from "../components/Header.astro"
+import Main from "../layouts/main.astro"
+import BilletCamping from "../components/Billet_camping.astro"
+---
+<Main title="Camping">
+<Header heading="Camping"/>
+<section class="section1">
+<div class="clicked"> <a href="/camping">Camping</a></div>
+<div class="label"> <a href="/billetter">billetter</a></div>
+<div class="label"> <a href="/transport">transport</a></div>
+</section>
+<section class="section2">
+    <BilletCamping head="Camp Rom" text="En rolig campingplads med strøm, hvor der er plads til handicap." fewLeft={true}/>
+    <BilletCamping head="Reunite telt" text="Reuntie er teltet for din bæredygtige sjæl placeret i Camp Rio."/>
+    <BilletCamping head="CAMP NEw YORK" text="På centrale camp NewYork kan du både få telt eller camping plads m. eller u. strøm." soldOut={true}/>
+    <BilletCamping head="CAMP MELBOURNE" text="En rolig campingplads oplagt til familien, for dig der ønsker en pause fra musik og støj."/>
+    <BilletCamping head="Camp amsterdam" text="En central campingplads uden strøm."soldOut={true}/>
+    <BilletCamping head="Camp Rio" text="Gratis teltplads for dig der ønsker fest og farver. (Kan ikke reserveres, det er først til mølle.)"/>
+    <BilletCamping head="Værelse" text="Til dig der ønsker at vågne i en seng på Den Rytmiske højskole i rolige omgivelser."/>
+</section>
+</Main>
+
+<style>
+
+.section1 {
+margin-top: var(--spacing-vertical-xsmall);
+margin-bottom: var(--spacing-vertical-xsmall);
+display: flex;
+justify-content: center;
+gap: var(--spacing-vertical-xsmall);
+}
+
+.clicked a {
+    text-decoration: underline;
+    color: var(--color-naturel-500);
+}
+
+a{
+font-family: "proxima-nova", sans-serif;
+font-weight: 700;
+font-size: 20px;
+line-height: normal;
+text-decoration: none;
+text-transform: uppercase;
+color: var(--color-button-linkbutton-text-default);
+}
+
+a:active{
+color: var(--color-button-linkbutton-text-clicked);
+}
+
+.section2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-vertical-xsmall);
+    max-width: 1000px;
+    align-items: center;
+    place-items: center;
+    justify-content: center;   
+    margin: 0 auto;
+    margin-bottom: var(--spacing-vertical-large);
+}
+@media (max-width: 700px) {
+.section1 {
+    gap: var(--spacing-2);
+}
+a {
+    font-size: 18px;
+}
+}
+</style>
+

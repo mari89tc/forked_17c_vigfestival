@@ -1,0 +1,84 @@
+<div class="popupOverlay" >
+    <div class="grid">
+        <img class="loader" src="/logos/vig_festival_logo.svg" alt="vig festival logo">
+    </div>
+</div>
+<style>
+.popupOverlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.785);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  display: block;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+.loader {
+  width: 25%;
+  height: 25%;
+  align-self: center;
+  justify-self: center;
+  -webkit-animation: scale 2s linear infinite;
+  animation: scale 2s linear infinite;
+}
+.hide {
+  display: none;
+}
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  /* 50% {
+    -webkit-transform: scale(1.5);
+  } */
+  100% {
+    -webkit-transform: scale(2);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  /* 50% {
+    transform: scale(1.5);
+  } */
+  100% {
+    transform: scale(2);
+  }
+}
+</style>
+<script>
+    function hideLoader() {
+        var popupOverlay = document.querySelector('.popupOverlay');
+        popupOverlay.classList.add('hide');
+    }
+
+    var minDisplayTime = 2000;
+    var contentLoaded = false;
+    var timerFinished = false;
+
+    // Timer der sikrer at loaderen er displayed i minDisplayTime
+    setTimeout(function() {
+        timerFinished = true;
+        if (contentLoaded) {
+            hideLoader();
+        }
+    }, minDisplayTime);
+
+    // Event listener til når siden er helt loadet
+    window.onload = function() {
+        contentLoaded = true;
+        if (timerFinished) {
+            hideLoader();
+        }
+    };
+</script>

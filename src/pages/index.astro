@@ -1,0 +1,314 @@
+---
+
+import Main from "../layouts/main.astro"
+import "../styles/global.css";
+import Primarybutton from "../components/Primarybutton.astro";
+import Kunstner_forside from "../components/Kunstner_forside.astro";
+import Secondarybutton from "../components/Secondarybutton.astro";
+import CardSmall from "../components/Card_small.astro";
+import Heartlist from "../components/Heartlist.astro";
+import Nyheder from "../components/Nyheder.astro";
+import CardList from "../components/CardList.astro";
+---
+<Main title="Forside">
+    <div class="hero">
+        <div class="hero-background">
+            <img class="desktop" src="graphics/herographic.svg" alt="hero graphic" width="1281px" height="616px">
+            <img class="mobile" src="graphics/mobilehero.svg" alt="hero graphic" width="390px" height="478px">
+        </div>
+        <div class="herotext">
+            <h4>En fest for hele familien</h4>
+            <img src="/image/index/vig_festival.svg" alt="vig festival tekst">
+            <div class="primary"><Primarybutton text="Køb billet" href="/billetter"/></div>
+        </div>
+        <div class="heroimage">
+            <img class="large animated-image" src="/image/index/large_heroimage.webp" alt="festivalgæster">
+            <img class="medium animated-image medium-delay" src="/image/index/medium_heroimage.webp" alt="børn">
+            <img class="small animated-image small-delay" src="/image/index/small_heroimage.webp" alt="øl skænkning">
+        </div>
+
+    </div>
+    <section class="section1">
+        <h3>Et program fyldt med fede artister!</h3>
+        <div class="kunstnerindex">
+            <Kunstner_forside img="rasmus_seebach.webp" alt="Rasmus seebach" head="Rasmus Seebach"/>
+            <Kunstner_forside img="nikogjay.webp" alt="Nik og Jay" head="Nik & Jay"/>
+            <Kunstner_forside img="andreasodbjerg.webp" alt="Andreas Odbjerg" head="Andreas Odbjerg"/>
+            <Kunstner_forside img="medina.webp" alt="Medina" head="Medina"/>
+        </div> 
+        <Secondarybutton href="program" text="Se programmet"/>
+    </section>
+    <section class="section2">
+        <CardSmall head="Vær med som frivillig" maintext="Når du bruger din fritid på at arbejde for festivalen og de lokale foreninger, er du en del af et stort fællesskab, hvor der løftes i flok. Sammen med de andre hjælpere får du et unikt sammenhold, der skabes gennem arbejdet, socialt samvær, hygge og samarbejde." img="image/index/frivllig_forside.webp" alt="frivillige" href="/volunteer" text="Bliv Frivillig"/>
+        <div class="timercomponent">
+            <h3>Vi tæller ned til årets fest!</h3>
+            <div class="timer">
+            <div>
+                <h2>42</h2>
+                <h5>dage</h5>
+            </div>
+            <div>
+                <h2>05</h2>
+                <h5>timer</h5>
+            </div>
+            <div>
+                <h2>59</h2>
+                <h5>min</h5>
+            </div>
+            <div>
+                <h2>26</h2>
+                <h5>sek</h5>
+            </div>
+        </div>
+        </div>    
+    </section>
+    <section class="section3">
+        <CardList head="Festival for børnene" img="image/index/kids_forside.webp" alt="Barn" href="kidsonthefestival" text="Læs mere">
+            <Heartlist input="Børneland for store og små"/>
+            <Heartlist input="Tryghed for børnene"/>
+            <Heartlist input="Spækket program for børn og unge"/>
+            <Heartlist input="Madhjørne med ro og hygge for alle"/>
+        </CardList>
+    </section>
+    <section class="section4">
+        <h3>Hold dig opdateret</h3>
+        <div class="nyheder">
+        <Nyheder img="image/index/nyheder_genbrugsglas.webp" alt="genbrugsglas" head="Skål i genbrugsglas!" text="I 2023 lavede vi nye tiltag med genbrugsglas, der er med fokus på at gøre festivalen mere bæredygtig..."/>
+        <Nyheder img="image/index/nyheder_billetter.webp" alt="glade mennesker" head="Kun 400 partoutbilletter tilbage" text="Skynd dig inden de er udsolgt, og bliv en del af dette års Vig Festival..."/>
+        <Nyheder img="image/index/medium_heroimage.webp" alt="børn" head="Nyhed for børnene" text="I år udvider vi børnenes oase med nye tiltag..."/>    
+        </div>
+    </section>
+</Main>
+<style>
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: var(--spacing-vertical-small);
+    overflow: hidden;
+}
+.hero-background {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mobile {
+    display: none;
+}
+.herotext {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    z-index: 2;
+}
+.herotext img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: var(--spacing-vertical-xsmall);
+}
+.herotext h4, .primary{
+    padding-inline-start: var(--spacing-margin-medium);
+}
+h4 {
+    color: var(--color-green-100);
+    margin: var(--spacing-1);
+    padding: 0px;
+}
+
+.animated-image {
+    animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+.medium-delay {
+    animation-delay: 0.5s;
+}
+
+.small-delay {
+    animation-delay: 2s;
+}
+.heroimage img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.heroimage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: var(--spacing-margin-xsmall);
+    z-index: 1;
+}
+.large {
+    width: 347px;
+    height: 347px;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+.medium {
+    width: 278px;
+    height: 278px;
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    align-self: start;
+}
+.small {
+    width: 186px;
+    height: 186px;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    align-self: start;
+}
+.section1, .section2, .section3, .section4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-vertical-medium);
+}
+.section4 {
+    margin-bottom: var(--spacing-vertical-large);
+}
+.section1 {
+    gap: var(--spacing-vertical-xsmall);
+}
+.kunstnerindex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-margin-small);
+}
+.section2 {
+    position: relative;
+    background-image: url(/graphics/index_section2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section2 h3 {color: var(--color-green-200);}
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-margin-medium);
+}
+.timer h5 {
+    color: var(--color-green-200);
+    margin: 0;
+    text-align: center;
+}
+.timer h2 {
+    color: var(--color-naturel-100);
+    margin: 0;
+    text-align: center;
+}
+.section3 {
+    position: relative;
+    background-image: url(/graphics/lightgreen2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 110vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section4 h3 {
+    justify-content: flex-start;
+    margin-bottom: var(--spacing-vertical-xsmall);
+}
+.nyheder {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-margin-small);
+}
+@media (max-width: 768px) {
+.desktop {
+    display: none;
+}
+.mobile {
+    display: block;
+}
+.hero {
+    padding-bottom: var(--spacing-vertical-small);
+}
+.heroimage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: var(--spacing-margin-medium);
+    z-index: 1;
+}
+.heroimage img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+.large {
+    width: 222px;
+    height: 222px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.medium {
+    width: 139px;
+    height: 139px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    align-self: end;
+}
+.small {
+    width: 135px;
+    height: 135px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    
+}
+.primary {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding-inline-start: 0px;
+}
+.section1, .section2, .section3, .section4 {
+    margin-bottom: var(--spacing-vertical-small); 
+}
+.section2 {
+    background-image: url(/graphics/mobileindexsection2.svg);
+    height: 130vh; 
+    gap: var(--spacing-vertical-xsmall);
+}
+.section3 {
+    background-image: url(/graphics/mobilelightgreen2.svg);
+    height: 120vh;
+}
+
+}
+</style>

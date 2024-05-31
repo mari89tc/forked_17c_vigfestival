@@ -1,0 +1,47 @@
+---
+const {head, href="/"} = Astro.props; 
+---
+<div>
+    <a href={href}>
+    <h5>{head}</h5>
+    </a>
+</div>
+<style>
+div {
+display: flex;
+gap: var(--spacing-margin-small);
+width: 272px;
+height: 272px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+border-radius: 360px;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+background: var(--Color-Cards-round-background-default, #D7F19F);
+
+}
+h5 {
+color: var(--Color-Cards-round-text-default, #0A0A0A);
+text-align: center;   
+width: 182px; 
+}
+a{
+text-decoration: none;
+
+}
+div:hover {
+background: var(--Color-Cards-round-background-hover, #FFD9FD);
+}
+div:active {
+background: var(--Color-Cards-round-background-active, #FF9CF9);
+}
+@media (max-width: 700px) {
+div {
+width: 170px;
+height: 170px;
+}
+h5 {
+width: 160px;
+}
+}
+</style>

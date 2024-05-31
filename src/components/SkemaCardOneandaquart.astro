@@ -1,0 +1,39 @@
+---
+const {head, time} = Astro.props;
+---
+<div class="oneandaquart">
+    <h5 class="head">{head}</h5>
+    <h5 class="time">{time}</h5>
+</div>
+
+<style>
+ .oneandaquart{
+     display: flex;
+     width: 343px;
+     height: 136px;
+     justify-content: space-between;     
+     padding: var(--spacing-1);
+     border-radius: var(--spacing-corner-radius-medium);
+     background-color: var(--color-cards-schedule-dark-background-background);
+     }
+ h5 {
+     margin: 0;
+     padding: 0;
+ }
+ .head {
+     display: flex;
+     align-items: flex-start;
+     color: var(--color-cards-schedule-dark-text-main);
+ }
+   .time {
+     display: flex;
+     align-items:flex-end;
+     color: var(--color-cards-schedule-dark-text-time);
+ }
+ @media (max-width: 700px){
+.oneandaquart{
+    width: 330px;
+    height:112px;
+}
+}
+</style>

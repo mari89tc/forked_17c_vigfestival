@@ -1,0 +1,44 @@
+---
+import Secondarybutton from "./Secondarybutton.astro";
+const {head, text, img, alt, target} = Astro.props;
+---
+<section class="card">
+<img src={img} alt={alt}>
+<div class="text">
+<h3>{head}</h3>
+<p class="small">{text}</p>
+<Secondarybutton {target}/>
+</div>
+</section>
+
+
+<style>
+.card {
+display: flex;
+width: 1278px;
+align-items: center;
+align-content: center;
+flex-shrink: 0;
+flex-wrap: wrap;
+}
+
+.text {
+display: flex;
+padding-left: var(--spacing-4);
+flex-direction: column;
+align-items: flex-start;
+gap: var(--spacing-margin-small);
+}
+.text h3 {
+color: var(--color-text-heading3_black);
+}
+.text p {
+color: var(--color-text-normaltext_black);
+flex: 1 0 0;
+}
+img {
+width: 600px;
+height: 700px;
+flex-shrink: 0;
+}
+</style>

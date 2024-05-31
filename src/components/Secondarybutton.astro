@@ -1,0 +1,33 @@
+---
+const {href = "/", text, target} = Astro.props;
+---
+<a href={href} target={target} class="button-link">
+  <p class="linkbuttontext">{text}</p>
+</a>
+
+<style>
+.button-link {
+    display: inline-block;
+    padding: 20px 50px;
+    text-decoration: none;
+    background: var(--color-button-secondarybutton-background-default);
+    color: var(--color-button-secondarybutton-text-default);
+    border: none;
+}
+.button-link:hover {
+  background: var(--color-button-secondarybutton-background-hover);
+}
+.button-link:active {
+  border: 2px solid var(--color-button-secondarybutton-background-active_stroke);
+  background: var(--color-button-secondarybutton-background-active_fill); 
+}
+p {
+  margin:0px;
+}
+@media (max-width:768px) {
+  .button-link {
+    place-self: center;
+    justify-self: center;
+  }
+}
+</style>
