@@ -215,6 +215,7 @@ p {
   font-style: normal;
   font-size: 18px;
   line-height: 26px;
+  max-width: 30em;
 }
 .xsmall {
   font-family: "open-sans", sans-serif;

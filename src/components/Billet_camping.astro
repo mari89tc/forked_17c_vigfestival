@@ -3,7 +3,7 @@ const {head, text, soldOut, fewLeft} = Astro.props;
 import ScarcityLabelUdsolgt from "./Scarcity_label_udsolgt.astro";
 import ScarcityLabelFtilbage from "./Scarcity_label_fåtilbage.astro";
 ---
-<div class="camping_card">
+<div class={`camping_card ${soldOut ? 'soldOut' : ''}`}>
 {soldOut && <div><ScarcityLabelUdsolgt></ScarcityLabelUdsolgt></div>}
 {fewLeft && <div><ScarcityLabelFtilbage></ScarcityLabelFtilbage></div>}
     <div class="roundbutton">
@@ -16,7 +16,17 @@ import ScarcityLabelFtilbage from "./Scarcity_label_fåtilbage.astro";
         <p class="small">{text}</p>
     </a>   
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.camping_card');
 
+    cards.forEach(card => {
+      if (card.classList.contains('soldOut')) {
+        card.classList.add('is-sold-out');
+      }
+    });
+  });
+</script>
 <style>
     .camping_card {
     position: relative;
@@ -28,38 +38,34 @@ import ScarcityLabelFtilbage from "./Scarcity_label_fåtilbage.astro";
     border-radius: var(--spacing-corner-radius-medium);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-
 a {
     text-decoration: none;
 }
-
 h4 {
     color: var(--color-cards-ticket-text-main);
     margin-top: 35%;
     text-align: center;
     text-transform: uppercase;
 }
-
 .small {
     color: var(--color-cards-ticket-text-main);
     margin: var(--spacing-margin-small);
     text-align: center;
 }
-
 .camping_card:hover {
     background: var(--color-cards-ticket-background-hover);
     color: var(--color-green-400);
 }
-
 .camping_card:active {
     background: var(--color-cards-ticket-background-hover);
     color: var(--color-green-400);
 }
-
 .camping_card:hover .date {
     display: none;
 }
-
+.is-sold-out {
+    pointer-events: none;
+  }
 .roundbutton {
     display: none;
     position: absolute;
@@ -70,11 +76,9 @@ h4 {
     justify-content: center;
     align-items: center;
 }
-
 .camping_card:hover .roundbutton {
     display: flex;
 }
-
 .roundbutton a {
     width: 100%;
     height: 100%;
@@ -86,33 +90,25 @@ h4 {
     justify-content: center;
     align-items: center;
 }
-
 .roundbutton a:active {
     background: var(--color-button-roundbutton-background-Active);
 }
-
 .linkbuttontext {
     margin: 0;
     padding: 0;
     color: inherit;
 }
-
 .linkbuttontext p {
     margin: 0;
     padding: 0;
 }
-
 .linkbuttontext p:hover, .linkbuttontext p:active {
     color: var(--color-button-roundbutton-text-hover);
 }
-
 @media (max-width: 700px) {
-
-
 h4 {
   font-size: 38px;
   line-height: 40px;
 }
 }
-
 </style>
